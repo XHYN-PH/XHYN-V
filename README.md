@@ -14,7 +14,7 @@
 
 ## What is XHYN V?
 
-XHYN V is a community Android launcher, customizable input overlay and compatibility/tuning layer around an existing ARM64 GTA V Android runtime. It brings touch keyboard and mouse controls, portable control profiles, graphics settings, Adreno driver selection and performance tools together in one interface.
+XHYN V is a community Android launcher, customizable input overlay and compatibility/tuning layer around an existing ARM64 GTA V Android runtime. The launcher is based on China port and based on leaked source code. It brings touch keyboard and mouse controls, portable control profiles, graphics settings, Adreno driver selection and performance tools together in one interface.
 
 The runtime uses an Android native build of **DXVK** for graphics translation and supports a bundled **Mesa Turnip** driver. XHYN V adds the launcher experience and controls around that runtime. This documentation repository contains the project overview, user guides, compatibility information, changelog, release notes and credits.
 
