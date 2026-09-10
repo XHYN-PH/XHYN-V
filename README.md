@@ -114,7 +114,7 @@ Arbitrary DXVK version switching, Windows DXVK DLL loading, and (Optional LSFG-V
 
 [YouTube](https://youtube.com/@xhyn_ph) · [Telegram group](https://t.me/xhynv)
 
-GTA V, the supplied Android runtime and third-party components belong to their respective creators. See [Credits](CREDITS.md), [license status](LICENSES.md) and [contribution guidelines](CONTRIBUTING.md).
+GTA V, the supplied Android runtime and third-party components belong to their respective creators. See [Credits](CREDITS.md), and [license status](LICENSES.md).
 
 > XHYN_PH does not condone or support piracy. Use only game files you legally own, and respect the rights and licenses of the original creators.
 
