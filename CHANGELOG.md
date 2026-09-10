@@ -1,0 +1,66 @@
+# Changelog
+
+Current prepared version: **0.10 / revision 10**. Versions here describe community launcher/compatibility builds, not official Rockstar game releases.
+
+## 0.10 — Controls and renderer customization
+
+### Added
+
+- Optional floating movement stick and mirrored movement/camera zones.
+- Eight configurable keyboard/mouse shortcut-wheel slots.
+- Up to eight named control pages per mode, with an in-game PAGE switch.
+- Pages, active page, floating/handedness and wheel settings in portable profiles.
+- Profile gallery with two-finger, four-finger and left-handed starters.
+- Reversible individual texture, shadow, reflection, grass and MSAA settings.
+- More FPS presets, custom 10–240 FPS limits and VSync selection.
+- Auto/1/2/4 shader compiler workers.
+- Optional DXVK frame-queue experiment with 1–4 queued frames.
+- Environment rows with individual switches and a master switch.
+- Global `dxvk.conf` import/editor with its own enable switch.
+- Explicit launcher/custom precedence, effective-settings preview and reset.
+- Moveable app CPU/RAM/thermal HUD with orientation and opacity choices.
+- User-started local performance recording and JSON export.
+- Indonesian and Brazilian Portuguese, bringing the menu to five languages.
+
+### Changed
+
+- Sliders snap in tens while retaining endpoints and untouched older values.
+- Graphics profiles include the new graphics selections.
+- Disabling detail overrides restores the correct underlying low/original values.
+- One effective private DXVK config replaces the previous inline config.
+- Input cancellation remains balanced across focus, menu and page changes.
+
+### Preserved
+
+All nine native libraries, existing compatibility fixes, driver loader, cursor bridge, icon, package identity, permissions and signing identity match the established revision 9 line. No DXVK version replacement or frame interpolation was added.
+
+### Validation
+
+17,473 host assertions and signed-package checks passed. Revision 10 phone testing remains to be confirmed. See [release notes](docs/releases/v0.10.md) and [validation](docs/VALIDATION.md).
+
+## 0.9 — Aiming and editing tools
+
+- Independent camera/aim sensitivity, inversion and optional gyro aiming.
+- Undo/redo, multi-select, snapping, alignment and group resizing.
+- Built-in and custom graphics profiles.
+- Android thermal-status HUD selection.
+- Physical-controller digital remapping, stick dead zones and touch auto-hide.
+- User subsequently reported successful gameplay.
+
+## 0.8 — Portable profiles and launcher languages
+
+- English, Filipino and Spanish menu selection.
+- Modern dark purple launcher with the app logo and compact control tools.
+- Named control profiles with Android file-picker import/export.
+- Custom render scale with a nonzero minimum.
+- Diagnostic-logging controls.
+
+## 0.7 and earlier — Foundation
+
+- Keyboard/mouse touch modes, configurable buttons, shapes and cursor support.
+- Individually selectable HUD counters and community branding/links.
+- XHYN V naming, UI refinement and reversible lower-detail settings.
+- Custom driver support and the earlier startup compatibility work.
+- Initial Test builds progressed from graphics/startup failures to reported gameplay.
+
+The [full historical changelog](docs/HISTORY.txt) preserves the detailed revision-by-revision record. Historical limits and verification statements apply to their own revisions; use the current guides for 0.10 behavior.

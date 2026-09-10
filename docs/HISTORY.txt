@@ -1,0 +1,653 @@
+XHYN V — XHYN_PH 🇵🇭
+REVISION 10 / VERSION 0.10 / VERSIONCODE 10
+
+Added
+- Optional floating movement stick and mirrored empty-space camera zones.
+- Eight configurable keyboard/mouse shortcut-wheel slots with hold/drag/release.
+- Up to eight named control pages per mode and an in-game PAGE switch.
+- Page, active-page, floating-stick, handedness and wheel data in control exports.
+- Profile gallery with two-finger, four-finger and left-handed starters.
+- Independent reversible texture/shadow/reflection/grass/MSAA controls.
+- 24/45/50/90/120/144 FPS choices and 10-240 custom FPS, plus 0/default limit.
+- VSync selector; Auto/1/2/4 shader compilation workers.
+- Opt-in DXVK frame-queue/latency experiment with 1-4 queued frames.
+- Graphics profile snapshots now include the new rendering controls.
+- Environment name/value editor, per-row switches and a master switch.
+- Editable/importable global dxvk.conf with its own on/off switch.
+- Explicit launcher/custom precedence, merged preview and override reset.
+- Movable horizontal/vertical app statistics HUD with independent opacity.
+- User-started CPU/PSS-RAM/thermal recording and local JSON report export.
+- Indonesian and Brazilian Portuguese menu languages; 432 dictionary entries
+  across English, Filipino, Spanish, Indonesian and Brazilian Portuguese.
+
+Changed and preserved
+- Sliders snap in steps of 10, retaining endpoints and untouched legacy values.
+- Generalized the original-detail recovery snapshot to include individual
+  graphics overrides; removing one returns it to the underlying preset.
+- One effective private DXVK config file replaces the earlier hardcoded inline
+  config; applied before engine initialization. Custom options default Off.
+- In-game tools remain scrollable in a compact two-column menu.
+- Focus/menu/page cancellation balances touch, latched and shortcut input.
+- All nine native libraries, original rendering fixes, Turnip/driver loader,
+  JNI bridges, icon resources, package identity and update certificate retained.
+- No new Android permission, DXVK binary replacement, frame interpolation,
+  automatic thermal performance change or automatic cloud report upload.
+
+Validation
+17,473 host assertions pass. APK signature, DEX references, original-method
+preservation, resources and native 16 KiB alignment pass. Revision 10 has not
+been phone-tested here; no FPS gain or universal driver compatibility claimed.
+APK SHA-256: 56a640334e7efbae808b14d4ba3834ec187720695d0f6864176948ca5564169c
+
+Use XHYN-V-Notes.txt for menu locations, defaults, data limits and behavior.
+Revision 9 previously received a successful user gameplay report.
+
+
+===== EARLIER RELEASE HISTORY =====
+
+XHYN V — XHYN_PH 🇵🇭
+REVISION 9 / VERSION 0.9
+
+Added
+- Separate horizontal/vertical touch camera sensitivity, aim multiplier,
+  configurable aim binding, vertical inversion and optional gyro aiming.
+- Aiming settings saved with exported control profiles; older profiles supported.
+- Editor Undo/Redo (60 edits), multi-select, group move/resize, snapping,
+  center guides and edge/center alignment.
+- Graphics profiles: Performance, Balanced, Quality and up to 32 custom named
+  snapshots with use/update/rename/delete actions.
+- Independent Android thermal-status HUD checkbox.
+- Optional physical-controller digital-button remapping, independent left/right
+  stick dead zones and automatic hiding/restoring of touch controls.
+- English, Filipino and Spanish translations for the new menu controls.
+
+Behavior and fixes
+- Existing sensitivity is preserved; aim multiplier defaults to 100%, gyro Off.
+- New graphics profiles use the existing detail-restoration mechanism; repeated
+  low-to-normal transitions passed settings-file tests.
+- Group movement preserves spacing at screen boundaries; Cancel restores the
+  pre-resize state and Undo can recover deleted controls and their bindings.
+- Shared physical-controller mappings and repeated key events cannot release
+  another held source button early. Focus/disconnect cleanup is included.
+- Rebuilt settings views ignore stale initial spinner callbacks.
+- All nine native libraries, existing driver support and icon are unchanged.
+
+Limits
+- Graphics changes require relaunch. Preset FPS values are limits, not promises.
+- Gyro depends on sensor availability and SDL mouse-look state; device testing
+  is needed to judge response and sensitivity.
+- Physical remapping covers ten standard digital buttons. Analog triggers and
+  D-pad behavior remain native. Nonstandard gamepads may need more work.
+- Thermal status comes from Android; it does not supply CPU/GPU temperatures.
+- No phone/emulator execution was performed here. 8,168 host assertions and
+  signed-package validation passed.
+
+Install over revision 8; package/signing identity are unchanged.
+
+PREVIOUS RELEASE HISTORY
+========================
+
+XHYN V — FULL COMMUNITY BUILD CHANGELOG
+Community release, customization direction and device testing: XHYN_PH 🇵🇭
+Current release: XHYN V — revision 8 (version 0.8 / versionCode 8)
+Release date: 9 September 2026
+APK: XHYN-V.apk
+
+xhyn confirmed that the original GTAV Test 02 reaches gameplay on a
+Snapdragon 8 Gen 3 / Adreno 750 device running Android 16 with 12 GB RAM.
+The earlier black screen with intro audio followed by a startup crash was
+overcome in that test. Compatibility with other devices and long-session
+stability still need testing.
+
+This changelog covers the compatibility changes made to the supplied Android
+build, based on game version 2699-dev_ng_Live, built 6 September 2026.
+
+
+XHYN V — REVISION 8 (VERSION 0.8)
+
+Language and modernized launcher
+- Added saved menu-language selection: English, Filipino and Spanish, with
+  250 translated entries for the launcher, control tools and normal dialogs.
+- Language changes refresh the menu immediately; the game language and stored
+  custom names/bindings remain separate.
+- Added a Settings page with language and diagnostic-logging choices.
+- Updated the launcher to a dark purple theme matching the supplied icon,
+  bordered cards and refined navigation/buttons. Added the app logo beside
+  the upper-left XHYN V title. Existing branding, links and credits are retained.
+
+Compact tools and portable profiles
+- Replaced the tall in-game tool list with a compact two-column button grid.
+- Replaced the wide editor panel with a narrow floating, scrollable panel.
+  Drag its handle to reposition it; Hide tools clears the canvas. Panel position
+  is remembered independently of the actual touch layout.
+- Kept Add, Cancel and Save accessible in the smaller top toolbar. Existing
+  bindings, button shapes, dimensions, visibility and toggle actions are retained.
+- Added named control snapshots with Use, Update, Rename, Duplicate and Delete.
+- Added Android document-picker import/export of .xhyn-controls.json files.
+- Profiles contain one mode, its full layout, movement keys, sensitivity and
+  appearance. Imported profiles create separate saved snapshots before applying.
+- Supports 128 named profiles and the existing 256-control limit per layout.
+- Import validation bounds file size/nesting and checks the supported format,
+  mode, bindings and layout. Native target geometry is rebuilt on the destination
+  device. This format does not import Winlator .icp files.
+
+Custom resolution and logging
+- Added custom rendering scale from 0% to 100%, with actual pixel dimensions
+  displayed and the inactive preset/custom controls visually disabled.
+- 0% selects a nonzero minimum size, with an aspect-preserving floor and even
+  pixel dimensions. Lower percentages clamp to the minimum shown in the UI.
+- Custom scale overrides the preset while enabled; switching it off restores
+  the selected preset on the next launch. Full graphics restoration disables
+  custom mode too. Detail restoration and resolution remain independent.
+- Added opt-in Disable diagnostic logging for launcher, DXVK and driver output,
+  together with the engine's supported quiet arguments/environment settings.
+- The app-local Vulkan shim skips formatted diagnostic output and its log-file
+  open when quiet mode is set. Existing logs are not deleted. Android/framework
+  and independent engine crash/error logs may still be produced; tty log
+  creation/rotation is not suppressed. This is not an all-system logging switch.
+
+Packaging, optional DXVK and verification
+- Version 0.8 / versionCode 8; same package and signer as revisions 6 and 7.
+  Installs over revision 7 while retaining app preferences and imported drivers.
+- Added a private manifest activity for profile file selection. No permissions
+  were added. Exactly manifest, DEX and libgtavvk.so changed among ZIP payloads.
+- Eight other native libraries remain byte-identical, including game, DXVK,
+  SDL, cursor helper, driver hooks and bundled Turnip. Existing native input
+  geometry and the core keyboard/mouse implementation are unchanged.
+- Driver logging patch preserves original virtual addresses and relocation
+  data, with two original instruction changes and small guarded entry paths.
+- 4,137 focused host assertions and 14 ARM64 logging-guard cases passed. Java,
+  DEX references, original activities/SDL, manifest, ZIP integrity, 16 KB
+  alignment and APK Signature Scheme v3 verification passed.
+- No Android phone test or measured FPS gain for revision 8 is claimed.
+- DXVK version switching is not included: a compatible alternate native Android
+  ARM64 build is needed. Ordinary Winlator/Wine Windows DLLs are incompatible
+  with the engine's current native-library linkage. Driver ZIP support remains.
+
+Current APK SHA-256 (versionCode 8):
+2af611ae2095dffdd35d1a05116837802ef6d17ddb6f86b97e00802e99cc1363
+
+See XHYN-V-Notes.txt for setup, profile sharing and logging/resolution limits.
+
+
+XHYN V — REVISION 7 (VERSION 0.7)
+
+Mobile keyboard/mouse input
+- Converted Mobile On foot and Driving from native controller actions to real
+  SDL keyboard and relative-mouse input. Right-side swipes now send direct
+  mouse deltas instead of pulsing the gamepad right stick.
+- On foot defaults to WASD movement; driving defaults to A/D steering and W/S
+  pedals. Foot and driving movement keys are now independently configurable.
+- Expanded mouse sensitivity to 0.25x–8.00x and retained the saved value.
+- Preserved existing mobile positions, sizes and visibility, and existing
+  Keyboard & mouse profile key/movement bindings during migration.
+- Retained manual FOOT/DRIVE switching and original Controller mode.
+
+Addable controls and shapes
+- Added Add button, Duplicate, Delete and editable button labels.
+- Supports 256 total controls per profile, including the original 18.
+- Added Circle, Rounded rectangle, Rectangle, Pill and Diamond button shapes,
+  with size and non-circular width/height adjustment and matching hit areas.
+- Added Hold or Tap on / tap off behavior for keyboard/mouse buttons.
+- Added buttons support 69 keyboard codes and three mouse buttons, including
+  when extra buttons are used alongside the original Controller layout.
+- Stable control IDs and per-profile layout storage retain added controls,
+  labels, bindings, shapes, dimensions, visibility and toggle settings.
+- Editor changes use a separate draft. Save commits; Cancel discards additions,
+  deletions and edits. Reset layout removes extras only when subsequently saved.
+- Naming uses a separate dialog so the keyboard does not resize the layout
+  canvas. The selector includes hidden buttons and updates as controls change.
+- Held actions are reference-counted. Tap-toggle actions survive lifting the
+  final finger, while opening menus, losing focus or changing modes releases
+  all virtual input. This is an independent Winlator-style editor, not an
+  integration of Winlator's framework or its .icp import format.
+
+Optional cursor
+- Added Off, Show in menus and Always show with three cursor sizes.
+- Queries the actual SDL mouse position through a read-only ARM64 helper and
+  scales game-window coordinates to the touch overlay at up to 30 Hz.
+- Menu mode hides the pointer when SDL reports relative mouse mode. It is a
+  heuristic, not engine-context detection. Library-load failure disables the
+  cursor only. The existing SDL input mode is not changed by cursor rendering.
+
+Individually selectable HUD
+- Replaced Performance/Full presets with a checkbox list of 16 counters.
+- CPU, GPU, FPS, frame times, app RAM, GPU memory, device/driver name, shader
+  activity, worker thread, draw calls, submissions, pipelines, descriptors,
+  allocations, DXVK version and D3D feature level can be chosen independently.
+- Added Clear all. Existing presets migrate to equivalent selected items.
+- CPU-only/RAM-only selections no longer force other renderer counters.
+- CPU and RAM sampling follow their individual selections; RAM collection is
+  skipped when unchecked. Existing 75–200% sizing is retained.
+
+Packaging and verification
+- Same com.xhynph.v package and signing key as revision 6; install as an update
+  without uninstalling. Settings, layouts and imported drivers remain in place.
+- Preserved the purple icon, credits/community links, graphics restoration and
+  driver-import implementation. Eight existing native libraries are unchanged.
+- Added libxhyninput.so for cursor queries. Existing changed payloads are only
+  AndroidManifest.xml and classes.dex; all nine libraries are ARM64/16 KB aligned.
+- 3,013 host assertions passed. Replayed 349 events through real ARM64 SDL input
+  translation with queue endpoints mocked; all 69 key codes are recognized.
+- 65 ARM64 cursor cases passed with SDL queries mocked. Java/DEX, manifest,
+  package, preserved classes/method references, alignment and signature checks
+  passed. No tested virtual key or mouse button remained held.
+- XHYN_PH reports revision 6 is working. Revision 7 still requires a phone test;
+  no new FPS gain, measured latency improvement or device compatibility claim.
+
+Previous APK SHA-256 (versionCode 7):
+a44760fc5494e78e2c93fa343431fd06d6a19313e2b957547fcc4831d9151197
+
+Install over revision 6. See XHYN-V-Notes.txt for setup and feature definitions.
+
+
+XHYN V — REVISION 6 (VERSION 0.6)
+
+Interface, identity and community
+- Enlarged ON/OFF switches to 108 x 56 dp, including the editor's visibility
+  control. Settings rows are also tappable. MENU/mode chips are 48 dp tall.
+- Applied the supplied purple V image to every launcher-icon density and
+  padded the adaptive foreground to preserve the artwork inside Android masks.
+- Updated owner branding to XHYN_PH 🇵🇭 while retaining app label XHYN V.
+- Added About links to youtube.com/@xhyn_ph and t.me/xhynv.
+- Removed the What's new card and the AI-assistance credit line.
+- Refined credits, retained original developer/third-party attribution, and
+  added XHYN_PH's notice that piracy is neither condoned nor supported.
+
+HUD and controls
+- Added Off / FPS only / Performance / Full DXVK HUD presets and 75–200% size.
+- Performance exposes FPS, frame times, estimated GPU load, GPU/driver info,
+  memory use, shader activity and DXVK worker-thread statistics.
+- Added optional app CPU/PSS memory readout with background sampling that
+  stops when hidden or unfocused. CPU is normalized over available cores.
+- Added Controller, Mobile On foot, Mobile Driving and Keyboard & mouse touch
+  profiles with separate saved layouts. Controller native targets are preserved.
+- Added manual FOOT/DRIVE switching during gameplay, action labels and larger
+  driving pedals. Empty right-side swipes drive the native right stick in mobile
+  profiles and recenter when movement stops.
+- Added actual SDL keyboard and relative-mouse input from touch, default WASD
+  movement, configurable movement keys, 16 remappable buttons and look sensitivity.
+- Supports 69 keyboard codes and three mouse buttons, shared key bindings,
+  simultaneous movement/aim/fire, fractional mouse deltas and input cancellation.
+- Editor Save/Cancel includes button bindings; reset uses each mode's defaults.
+  The editor's control names update when bindings change.
+
+Packaging and boundaries
+- New app ID com.xhynph.v and a new, separately preserved signing key. The old
+  key was unavailable after a workspace reset. Installs ALONGSIDE revision 5;
+  private settings/layouts/imported drivers must be configured again.
+- Existing external saves/settings are shared. Keep the working copy installed
+  while testing and run only one copy at a time.
+- Preserved all eight native libraries from the working revision 5. The proven
+  detail-restoration and driver-import implementations are unchanged.
+- DXVK version switching is not included: this engine needs compatible Android
+  ARM64 native libraries; ordinary Windows DXVK DLLs cannot replace them.
+- LSFG-VK/frame interpolation is not installed. An Android-compatible layer and
+  integration with this renderer have not been validated. No fake feature toggle.
+
+Validation and device status
+- 2,241 host assertions passed; 180 generated input events replayed through the
+  APK's ARM64 SDL translation routines with queue endpoints mocked. All 69
+  offered keyboard codes map to real SDL scancodes; no held inputs remained.
+- Java/DEX, unchanged original classes, native JNI signatures, method references,
+  package/manifest, icons, ARM64/16 KB alignment and v3 signature checks passed.
+- Exactly 13 non-signature entries changed: manifest, DEX, ten icon PNGs and
+  adaptive icon XML. The supplied image bytes are preserved in all ten PNGs.
+- At release, revision 6 still required a phone test. XHYN_PH subsequently
+  reported it working well and requested the revision 7 refinements above.
+  No FPS gain or additional device compatibility has been measured.
+
+Previous APK SHA-256 (versionCode 6):
+18e9f3d081d658867c6a73b94661ada0ed219fb12885c44458afce74b48bd7b1
+
+See XHYN-V-Notes.txt for installation, controls, HUD definitions and limitations.
+
+
+XHYN V UPDATE — 9 SEPTEMBER 2026 (REVISION 5)
+
+Branding and interface
+
+- Renamed the Android launcher label from GTAV Test 02 to XHYN V.
+- Added visible by xhyn credit in the launcher, an About page, and in-game
+  About & credits. Credits identify xhyn's community release, customization
+  direction and device testing while retaining the original developers' credit.
+- Rebuilt the launch screen with Graphics, Controls, Drivers and About pages.
+- Added consistent dark cards, mint accents, readable dropdowns and dialogs,
+  a saved-layout preview, and a persistent Launch game button.
+- Refined the control editor's panel, button spacing, dropdown and sliders.
+- Added display-cutout padding to the launcher.
+- Kept English, saved preferences and the existing 18-control input mapping.
+
+Fixed graphics-detail restoration
+
+- Turning Lower graphics detail OFF now restores the saved pre-preset values
+  on the next launch. Revision 4 only stopped applying low values, leaving
+  the settings file at low detail.
+- Saves a detail baseline on the transition from normal to lower detail.
+  Repeated launches while the preset is on do not overwrite that baseline.
+- Later on/off cycles capture newer normal values instead of repeatedly
+  restoring the very first settings file.
+- Migrates existing Test 02 files carrying the preset's eleven zeroed detail
+  values from settings.before-tuning.xml, including when the toggle was already
+  off before this update. Existing manually changed normal values are kept.
+- Restores only the eleven detail keys managed by the preset. Resolution and
+  the frame-rate selection remain independent; unrelated settings are preserved.
+- Keeps the original full graphics backup and offers Restore full graphics
+  backup for recovering resolution and the other earlier settings together.
+- Writes recovery state before lowering detail and marks restoration complete
+  only after the settings file is replaced. Interrupted restoration can retry.
+- Validates the whole update before writing. Invalid XML, incomplete recovery
+  data or failed writes produce a visible error.
+
+Optional driver ZIP support
+
+- Added Drivers -> Import & use driver ZIP through Android's file picker.
+- Supports AdrenoTools schemaVersion 1 packages with meta.json and ARM64 .so
+  files, including packages wrapped in one folder.
+- Imports into app-private storage, retains multiple packages, and lets the
+  user return to the existing bundled Turnip R8 driver.
+- Keeps bundled Turnip as the default and unchanged from the working build.
+- Checks archive paths, duplicates, limits and checksums; metadata and Android
+  API requirements; ARM64 ELF structure and device memory-page alignment.
+- Installs a validated package atomically. Failed imports keep current drivers
+  and do not change the selected driver.
+- Loads the selected import through the existing AdrenoTools integration
+  before engine startup. No root or system-driver installation is required.
+- Separates imported shader caches by package hash and keeps the bundled cache.
+- Attempts bundled Turnip if an imported loader fails to open, preserving the
+  existing system fallback. Rendering failures after loading still require
+  manual recovery by selecting Bundled Turnip on the next full launch.
+- Keeps gtav_driver_test2.log for diagnostics, with XHYN V revision 5 branding
+  and requested-driver information. Enumeration reports the actual driver.
+
+Packaging and verification
+
+- Increased versionCode to 5 and versionName to 0.5 with the existing application
+  ID and signing certificate, allowing installation over GTAV Test 02.
+- Changed only AndroidManifest.xml, classes.dex and libgtavvk.so among the
+  non-signature payloads. The other seven native libraries remain byte-identical
+  to revision 4, including the game, DXVK, loading hooks and bundled Turnip.
+- Preserved the existing English argument and startup graphics-lock mitigation.
+- 202 host assertions passed for recovery, migration, interruption/retry,
+  write failures and driver-import validation. The real bundled Turnip package
+  imported and its extracted driver matched the source bytes.
+- Ten native loader scenarios passed with Android and GPU operations mocked.
+- Java compilation, DEX audit, manifest, ZIP integrity, ARM64/16 KB alignment
+  and APK Signature Scheme v3 verification passed. The certificate matches Test 02.
+
+Device status: xhyn reports that revision 4 works and the lower-detail option
+changes graphics. The new log confirms bundled Turnip and 1200 x 540 rendering.
+At release, revision 5 needed a phone test. XHYN_PH subsequently reported it
+working well. Individual custom-driver packages still require device testing.
+No additional measured FPS gain or wider device compatibility is claimed.
+
+Recovery restores saved values, not guessed quality levels. If the original
+backup was already low detail, it cannot supply unknown earlier normal values.
+Driver import checks do not establish runtime compatibility with a particular
+GPU. See XHYN-V-Notes.txt for setup, restoration and driver recovery instructions.
+
+
+PERFORMANCE & CONTROLS UPDATE — 9 SEPTEMBER 2026 (REVISION 4)
+
+- Added a launch screen for rendering options and touch-control customization.
+- Added render-scale choices: current game setting, 50%, 67%, 75%, 83%, native.
+  On a 2400 x 1080 display, the default 67% choice requests 1600 x 720.
+- Added 30/40/60 FPS limits and a no-added-limit option through DXVK.
+- Replaced the unconditional maximum-refresh request with a refresh-mode
+  choice matched to the frame limit, preserving the physical panel resolution.
+- Added a lower-detail graphics preset and an optional FPS counter.
+- Default starting settings: 67% resolution, lower detail, 30 FPS limit.
+- Applies graphics choices through the existing saved settings file before
+  launch. Creates settings.before-tuning.xml once and offers restoration.
+  Unrelated settings are preserved; invalid/missing values produce a visible
+  error with an option to launch using current settings.
+- Added a full-screen control editor with dragging, per-control size from
+  50% to 180%, visibility, individual/full reset, Save, and Cancel.
+- Covers all 18 native controls: two sticks, 14 buttons, and two triggers.
+- Added a persistent MENU button for in-game editing, opacity, control
+  visibility, optional vibration, and performance settings for the next launch.
+- Stores control positions, sizes, visibility, and appearance between launches.
+- Maps customized positions back to the existing native touch targets.
+  Multi-touch supports simultaneous sticks, buttons, and triggers.
+- Releases held touches on cancellation, menu opening, focus loss, and view
+  removal. Physical mouse events retain the existing SDL surface path.
+- Caps native touch-state polling at 30 Hz, while local touch motion redraws
+  immediately. Button-press vibration is optional and off by default.
+- Translated the original storage-permission request and denial message.
+- Increments versionCode to 4 using the existing Test 02 app ID and certificate.
+- All eight native libraries are byte-identical to the English revision.
+  The existing Turnip loader, cache, English setting, and frame-lock fix remain.
+
+Validation: 292 host assertions passed. Replaying 52 Java-generated touch
+events through the original ARM64 gamepad routines passed 924 state checks.
+The native replay mocks mutex calls and excludes Android/SDL event delivery.
+DEX, package, alignment, and signature checks passed. Android UI, installation,
+GPU performance, and sustained gameplay had not been tested when revision 4
+was built. xhyn subsequently reported that it works and confirmed the lower
+detail option changes graphics. No FPS improvement has been measured. The
+one-way detail toggle reported afterward is fixed in revision 5.
+
+
+ENGLISH UI UPDATE — 9 SEPTEMBER 2026
+
+- Changed the embedded startup argument from -uilanguage=chinesesimp to
+  -uilanguage=american. The engine identifies american as English.
+- Increased Android versionCode from 2 to 3 for update installation.
+- Uses the existing Test 02 application ID and signing certificate. Install
+  over GTAV Test 02 and reopen the game; uninstalling first is unnecessary.
+- Exact comparison confirms the language literal and manifest versionCode
+  are the only payload changes, alongside regenerated signing metadata.
+- ZIP integrity, manifest decoding, native-library alignment, and APK
+  Signature Scheme v3 verification passed. The certificate matches Test 02.
+- The English update has not yet been tested on the phone. The gameplay
+  confirmation below applies to the original Test 02 before this language edit.
+
+
+GTAV TEST 02 — ORIGINAL RELEASE, 9 SEPTEMBER 2026
+
+1. Added a bundled Mesa Turnip graphics driver
+
+- Integrated Mesa Turnip v26.0.0 R8, advertised as Vulkan 1.4.335, using the
+  published K11MCH1 / KIMCHI driver package.
+- Added per-app custom-driver loading through libadrenotools.
+- The driver is bundled in the APK and loaded within the game process.
+  No root or separate driver ZIP installation is required for this build.
+- Retained the downloaded driver binary unchanged, packaging it under the
+  Android-compatible filename libvulkan_ad07xx.so.
+
+2. Unified Vulkan loading across the graphics components
+
+- Routed the DXVK D3D11 renderer, DXGI, SDL's Android Vulkan surface creation,
+  and the engine's native Vulkan interoperability code through libgtavvk.so.
+- Updated both libvulkan.so and libvulkan.so.1 lookup strings where present.
+- Used one shared loader initialization so these components can use the same
+  Vulkan driver instance and compatible handles.
+- Added thread-safe initialization and forwarding of Vulkan function lookups.
+
+3. Updated Vulkan feature selection
+
+- Restored the original DXVK feature-selection instructions from the base APK.
+- Removed Test 01's unconditional Vulkan 1.3 compatibility override.
+- When the custom loader opens, disables the legacy override so DXVK can use
+  the selected driver's reported capabilities.
+- An existing vk_legacy13 marker is overridden for the Turnip path within the
+  app process; the marker file itself is preserved.
+- Added logging and a system-driver fallback if custom loading fails. The
+  fallback may reproduce the original graphics problem on affected devices.
+
+4. Retained the startup graphics-lock mitigation
+
+- Kept Test 01's change to the frame-fence polling loop in libgtav.so.
+- Each pending iteration releases the graphics context lock, sleeps for
+  1 millisecond, and reacquires the lock before checking the fence again.
+- This gives other startup work an opportunity to acquire the graphics lock.
+- Fence checks, balanced lock handling, error handling, and hang detection
+  remain active.
+
+5. Added an independent shader cache
+
+- Changed the DXVK shader-cache folder to Games/GTAV/dxvk-test2.
+- Preserved the earlier Games/GTAV/dxvk-cache folder.
+- The first launch can take longer while the new cache is populated.
+
+6. Added driver diagnostics
+
+- Added Games/GTAV/gtav_driver_test2.log.
+- Records the loader setup, device-enumeration results, GPU name, Vulkan
+  version, driver ID, driver name, and driver information when available.
+- Records custom-loader failures and system-driver fallback selection.
+- Logs a warning if the selected driver is not identified as Mesa Turnip.
+
+7. Updated packaging
+
+- Launcher label: GTAV Test 02.
+- Application ID: com.gtavsource.android.turnip002.
+- Android versionCode: 2.
+- Uses a separate test signing certificate and installs alongside both the
+  original app and GTAV Test 01.
+- Enabled native-library extraction, as required by this driver-loading setup.
+- All eight native libraries are ARM64 and retain 16 KiB-compatible ELF and
+  APK alignment.
+- Declared minimum Android API: 30 (Android 11).
+- Target Android API: 36 (Android 16).
+  These manifest values do not establish compatibility with every device
+  running those Android versions.
+
+Added native libraries:
+- libgtavvk.so — app-local Vulkan loader and AdrenoTools integration.
+- libhook_impl.so — AdrenoTools hook implementation.
+- libmain_hook.so — Vulkan driver-loading hook.
+- libvulkan_ad07xx.so — bundled Turnip driver.
+
+
+GTAV TEST 01 — 9 SEPTEMBER 2026
+
+- Added the frame-fence graphics-lock mitigation described above.
+- Modified both bundled DXVK libraries to enter their existing Vulkan 1.3
+  compatibility path by default.
+- Corrected an incomplete fallback by disabling EXT load/store-none support
+  as well as the KHR variant. The existing fallback also disabled maintenance5,
+  maintenance6, and the descriptor-buffer/heap paths.
+- Added a separate application ID, com.gtavsource.android.starttest, with
+  launcher label GTAV Test 01 and a test signing certificate.
+- Preserved ARM64 library alignment and the existing game-folder workflow.
+
+Test result: startup progressed further, but the black screen, graphics
+pipeline failure, and GPU device-loss errors remained. Test 02 retains the
+graphics-lock mitigation and supersedes the forced feature fallback with
+the new driver integration and original DXVK feature-selection instructions.
+
+
+DIAGNOSTIC FINDINGS
+
+- The failing run used Qualcomm's Adreno Vulkan driver 0.762.36 and the
+  supplied custom DXVK v3.1+ implementation.
+- The log recorded a graphics-pipeline creation failure with result -13
+  (VK_ERROR_UNKNOWN), followed later by repeated VK_ERROR_DEVICE_LOST errors.
+- Audio initialized successfully while rendering failed.
+- The vertex and fragment shader dumps were identical between the later
+  failing runs and passed SPIR-V validation for Vulkan 1.3.
+- Earlier crash traces showed frame-fence waiting while the graphics context
+  lock was held, with other startup work blocked on that lock. Several exits
+  were the hang detector terminating stalled startup after about a minute.
+
+These findings motivated the two test builds. The successful gameplay report
+supports the Test 02 changes as a working startup remedy on the tested device;
+it does not identify the exact low-level Qualcomm driver fault.
+
+
+VERIFICATION AND CURRENT STATUS
+
+- Original Test 02 tester-confirmed result: gameplay reached on Snapdragon 8 Gen 3,
+  Adreno 750, Android 16, 12 GB RAM.
+- Exact original APK hash and intended binary patch locations checked.
+- Driver-loader libraries built with Android NDK r27c.
+- Five desktop test scenarios passed: custom loading, custom-loader failure,
+  missing extracted libraries, internal system-driver fallback, and complete
+  loader unavailability. Tests also covered concurrent initialization and
+  Vulkan dispatch forwarding. Android and GPU calls were mocked.
+- Signed APK payload hashes matched the build audit.
+- ZIP integrity, manifest decoding, architecture, and alignment checks passed.
+- Android apksigner verification passed using APK Signature Scheme v3.
+
+The original Test 02 was confirmed to reach gameplay after its desktop checks.
+xhyn subsequently reported that revision 4 works and requested the refinement
+delivered in revision 5, and subsequently reported that build working well.
+XHYN_PH reported revision 6 working well. Later refinements are recorded in the
+revision 7 and 8 sections above. Revision 8 has not been run on a phone here;
+rendering performance has not been measured here.
+
+FPS gains, sustained performance, temperatures, complete mission progression,
+and long-session stability have not been measured. Missing or mismatched game
+data and DLC packages reported in earlier logs were not repaired by this patch.
+Testing so far covers one reported hardware configuration.
+
+
+INSTALLATION AND TROUBLESHOOTING
+
+1. Back up your saves and close any other GTAV app.
+2. Install revision 8 over the purple-icon revision 7 and open XHYN V.
+   No uninstall is needed. Saved preferences, layouts and imported drivers
+   stay in the existing com.xhynph.v installation.
+   The optional Drivers page imports driver ZIPs or restores bundled Turnip.
+3. Grant the existing game-folder access prompt.
+4. Use the existing Games/GTAV data folder and allow time for the first shader
+   cache build. Run only one GTAV app at a time.
+
+An older revision 5 app, if still installed, shares the external game folder
+with this app. Run only one at a time. Revision 8 updates revision 7 in place;
+Android normally prevents installing a lower-version APK as an update.
+
+If a problem occurs, collect these files from Games/GTAV before launching
+another build, which may rotate or overwrite shared logs:
+- gtav_driver_test2.log
+- gtav_tty.log
+- The newest gtav_exit_trace_*.bin
+- Any newly generated gtav_pipeline_error.log and associated .spv files
+
+Include the device model, Android version, stage reached, and time before the
+failure. If gtav_driver_test2.log is missing, include that detail in the report.
+
+
+BUILD IDENTIFICATION AND CREDITS
+
+Previous XHYN V APK SHA-256 (versionCode 5; historical):
+e247bfa5dea0c6f320e4a14827dfb56dc6c66c24dcd578ff928b647e3b86da1a
+
+Previous performance/control APK SHA-256 (versionCode 4):
+fa40414b862ee9b775e7d8fe15b6c7f07f50131af24c405356e7e073d918db29
+
+English update APK SHA-256 (versionCode 3; historical):
+43426d733ec6811e9ca48a4e7c7853a6c6f89312fee577d6e4957fd74030b4fa
+
+Original Test 02 APK SHA-256 (versionCode 2; tester-confirmed gameplay):
+6e5e2d935e6524eb2f19d4d1fa3f322939f891923ad625355c0d086be6f51410
+
+Base APK SHA-256:
+7a7f4b80ee7ed3d8c5c1d72ba01c47067810e31ace01a44aa96a5a40b18857f6
+
+Community release, customization direction and device testing: XHYN_PH 🇵🇭.
+
+Driver: Mesa / Freedreno contributors.
+Driver package: KIMCHI / K11MCH1, Turnip_v26.0.0_R8.zip.
+Driver-loading libraries: Billy Laws / bylaws, libadrenotools and
+liblinkernsbypass.
+The base game and Android port remain the work of their respective developers.
+This is an independent community project, not affiliated with Rockstar Games.
+XHYN_PH does not condone or support piracy. Use only game files you legally own.
+YouTube: https://youtube.com/@xhyn_ph
+Telegram: https://t.me/xhynv
+
+Driver release:
+https://github.com/K11MCH1/AdrenoToolsDrivers/releases/tag/v26.0.0-rc08
+
+AdrenoTools source:
+https://github.com/bylaws/libadrenotools
+Commit: 8fae8ce254dfc1344527e05301e43f37dea2df80
+
+liblinkernsbypass source:
+https://github.com/bylaws/liblinkernsbypass
+Commit: aa3975893d83ef1bc84c321ec60c65fbf1287887
+
+Detailed source, audits, and desktop test results are provided separately in
+XHYN-V-Review.zip. Third-party notices are retained in the APK and review archive.
