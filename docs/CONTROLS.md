@@ -68,15 +68,13 @@ Save a named profile before trying another layout. Profiles can be used, updated
 | Pages per mode | Up to 8 |
 | Controls per layout | Up to 256 |
 
-Revision 10 exports capture the working mode/layout, pages and active page, floating/handedness choices, aiming preferences, shortcut-wheel configuration and earlier appearance/input options. A profile with many large pages can reach the file-size limit before the page-count limit.
 
 Imports create a saved snapshot. Apply it deliberately to replace the working layout/pages. Malformed and oversized imports are rejected without replacing the current layout. Older version-1 profiles load with new optional features disabled when fields are absent.
 
 The **Profile gallery** previews saved profiles and offers two-finger, four-finger and left-handed starters. Starters use keyboard/mouse input; opening a starter from native-controller mode targets the on-foot mode. Save your current profile before applying a starter if you want to keep both.
 
-**Winlator `.icp` profiles are not compatible with this importer.** Older XHYN releases may read the working layout from a newer export but do not implement its extra pages and wheel options.
 
-## Physical controllers
+## Physical controllers (NOT TESTED)
 
 Optional physical-controller settings provide remapping for ten standard digital buttons, independent left/right stick dead zones and automatic hiding/restoring of touch controls.
 
