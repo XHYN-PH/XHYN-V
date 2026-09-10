@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">XHYN V</h1>
-<p align="center"><strong>By XHYN_PH 🇵🇭</strong><br>Android controls, graphics tuning and a personalized launcher for a compatible GTA V runtime.</p>
+<p align="center"><strong>A Unnofficial Native Android Port of GTA V (A modification based on China port.)</strong><br></p>
 <p align="center">
   <a href="https://youtube.com/@xhyn_ph">YouTube</a> ·
   <a href="https://t.me/xhynv">Telegram community</a> ·
@@ -24,15 +24,8 @@ The runtime uses an Android native build of **DXVK** for graphics translation an
 
 | Item | Status |
 | --- | --- |
-| Current prepared build | **0.10 / revision 10** |
-| Android package | `com.xhynph.v` |
-| Gameplay report | XHYN_PH reached gameplay on Snapdragon 8 Gen 3 / Adreno 750, Android 16, 12 GB RAM; reports cover earlier builds through revision 9 |
-| Revision 10 validation | 17,473 host assertions plus signature, package and native-library preservation checks passed |
-| Revision 10 phone testing | Pending confirmation; host checks do not establish gameplay performance |
-
-See the [validation record](docs/VALIDATION.md) for the evidence and its scope. Performance and compatibility depend on the device, driver, settings and supplied runtime/data combination.
-
-## Features
+| Current prepared build | **FINAL 0.10 / revision 10** |
+| Gameplay report | Only tested on Snapdragon 8 Gen 3 / Adreno 750, Android 16, 12 GB RAM |
 
 ### Touch controls that fit your play style
 
@@ -44,9 +37,9 @@ See the [validation record](docs/VALIDATION.md) for the evidence and its scope. 
 - Profile gallery with two-finger, four-finger and left-handed starter layouts.
 - Optional floating movement stick and eight-slot keyboard/mouse shortcut wheel.
 - Separate horizontal/vertical camera sensitivity, aiming sensitivity, vertical inversion and optional gyro aiming.
-- Optional mouse cursor, physical-controller button remapping, stick dead zones and automatic hiding of touch controls.
+- Optional mouse cursor, physical-controller button remapping, stick dead zones and automatic hiding of touch controls. **PHYSICAL CONTROLLER ISN'T TESTED**
 
-Profile limits and mode behavior are explained in the [controls guide](docs/CONTROLS.md). XHYN profiles use their own format; Winlator `.icp` import is not implemented.
+Profile limits and mode behavior are explained in the [controls guide](docs/CONTROLS.md). XHYN V profiles use their own format.
 
 ### Graphics and performance tuning
 
@@ -74,34 +67,30 @@ Driver and renderer changes apply on a full game restart. See [Drivers and advan
 
 ### Launcher and accessibility
 
-- Dark purple interface, XHYN V logo, large toggle rows and compact in-game tools.
 - Menu languages: **English, Filipino, Spanish, Indonesian and Brazilian Portuguese**.
-- Sliders snap in steps of 10 while retaining endpoints and untouched older values.
-- Community links and XHYN_PH credits in About.
 
 ## System requirements
 
 | Component | Requirement or known status |
 | --- | --- |
-| Android | **Android 11 / API 30** is the APK installation floor; Android 16 is the reported gameplay environment |
-| Architecture | **64-bit ARM Android (`arm64-v8a`)** |
-| GPU/driver | Compatible Vulkan driver; current bundled path targets Adreno/Turnip. Adreno 750 is the reported working GPU |
-| RAM | **12 GB reported working** on the tested device; minimum RAM has not been established |
-| Storage | APK is approximately **187.1 MiB**, plus installation space, compatible game data, saves and caches |
-| Game data | Separately supplied data compatible with this specific Android runtime |
-| Optional hardware | Gyroscope for gyro aiming; compatible USB/Bluetooth controller for physical input |
+| Android | Atleast **Android 13 / API 33**; Android 15 is recommended |
+| Architecture | **Strictly 64-bit ARM Android Only (`arm64-v8a`)** |
+| GPU/driver | Device with atleast **Vulkan 1.3** support; Current bundled path targets Adreno/Turnip. Atleast **Adreno 730** up |
+| RAM | **12 GB reported working** on the tested device; minimum RAM has not been established probably 8GB |
+| Storage | APK is approximately **200 MiB**, plus installation space, compatible game data, saves and caches = more or less than 100GB atleast|
+| Game data | Separately supplied game data files compatible with this specific Android runtime |
 
-The closest known working configuration is **Snapdragon 8 Gen 3 / Adreno 750 / Android 16 / 12 GB RAM**. Other devices are unverified, and installation eligibility alone does not guarantee gameplay. [Full compatibility details](docs/COMPATIBILITY.md).
+Will other CPU/GPU will be supported? for now **NO**. The closest known working configuration is **Snapdragon 8 Gen 3 / Adreno 750 / Android 16 / 12 GB RAM**. Other devices are unverified, and installation eligibility alone does not guarantee gameplay. [Full compatibility details](docs/COMPATIBILITY.md).
 
 ## Getting started
 
-1. Use the APK attached to a release announced by XHYN_PH. The repository ZIP contains documentation and is not an installable app.
+1. Use the APK attached to a release.
 2. Back up saves and close the running game before installing or updating.
 3. Install the APK and grant the requested game-folder access.
 4. Provide the compatible data expected under `Internal storage/Games/GTAV`.
 5. Start with the bundled driver and your existing working graphics settings. Select a control mode and save a profile before experimenting.
 
-Read [Installation and updates](docs/INSTALLATION.md) for update signatures, first-run settings and APK verification. APK publication is separate from this documentation repository; a release may not have an attached APK yet.
+Read [Installation and updates](docs/INSTALLATION.md) for update signatures, and first-run settings.
 
 ## Guides
 
@@ -113,17 +102,16 @@ Read [Installation and updates](docs/INSTALLATION.md) for update signatures, fir
 | Tune resolution, details, FPS or HUD | [Graphics](docs/GRAPHICS.md) |
 | Import drivers or configure DXVK/Turnip | [Advanced renderer](docs/ADVANCED_RENDERER.md) |
 | Investigate crashes, black screens or settings | [Troubleshooting](docs/TROUBLESHOOTING.md) |
-| Read the prepared app's validation summary | [Validation record](docs/VALIDATION.md) |
 | Review current changes | [Changelog](CHANGELOG.md) and [0.10 release notes](docs/releases/v0.10.md) |
 | Maintain or publish the repository | [Maintainer guide](docs/MAINTAINER.md) |
 
 ## Current limits
 
-Arbitrary DXVK version switching, Windows DXVK DLL loading, LSFG-VK/frame interpolation and Winlator profile import are not implemented. This project does not establish GTA Online support or universal GPU compatibility. New native renderer versions would need a compatible Android ABI and integration work.
+Arbitrary DXVK version switching, Windows DXVK DLL loading, and (Optional LSFG-VK/frame interpolation). This project does not establish GTA Online support or universal GPU compatibility.
 
 ## Community and credits
 
-**Community release, customization direction, branding and device testing: XHYN_PH 🇵🇭**
+**Community release, based on CHINA PORT modified by: XHYN_PH 🇵🇭**
 
 [YouTube](https://youtube.com/@xhyn_ph) · [Telegram group](https://t.me/xhynv)
 
