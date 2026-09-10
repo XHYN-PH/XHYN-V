@@ -2,7 +2,7 @@
 
 ## XHYN_PH 🇵🇭
 
-Community release, customization direction, branding and device testing by **XHYN_PH**. XHYN V brings the launcher, controls, configuration tools and community experience together under this name.
+Based on source leaked codes and based on GTA V Unofficial Native Port made in china. XHYN V brings the launcher, controls, configuration tools and community experience together under this name.
 
 - [YouTube — @xhyn_ph](https://youtube.com/@xhyn_ph)
 - [Telegram — XHYN V community](https://t.me/xhynv)
