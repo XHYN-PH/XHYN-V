@@ -17,7 +17,7 @@ This repository does not supply game data. Use data you legally own that is comp
 
 Updating the same package with the same signing identity is intended to retain app settings, imported drivers, profiles and saves. Keep your own backup; clearing app storage or uninstalling can remove app-private settings and profiles.
 
-If Android reports a signing conflict, verify that both APKs belong to the same package/build line. Do not uninstall the working app merely to bypass the conflict. Older **GTAV Test** branches used separate identities and are not automatically equivalent to an XHYN V update.
+If Android reports a signing conflict, verify that both APKs belong to the same package/build line.
 
 ## First-run graphics settings
 
