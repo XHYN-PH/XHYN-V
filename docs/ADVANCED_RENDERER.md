@@ -10,8 +10,6 @@ The importer validates archive paths, metadata and native library compatibility.
 
 Import through the Android file picker, select the driver, fully close the game and relaunch. To undo a driver experiment, select **Bundled Turnip R8** and restart. An unavailable selected import falls back to the bundled choice; a driver that loads but renders incorrectly can still require manual rollback.
 
-The native libraries in revision 10 match revision 9. This update does not ship a new Turnip or DXVK binary.
-
 ## Enable advanced settings
 
 Open **Graphics** or **Settings → Advanced renderer**. Both custom environment variables and custom `dxvk.conf` have independent master switches, initially Off. Saving/importing text does not automatically enable it.
