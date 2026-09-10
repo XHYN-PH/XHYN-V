@@ -1,8 +1,6 @@
 # Changelog
 
-Current prepared version: **0.10 / revision 10**. Versions here describe community launcher/compatibility builds, not official Rockstar game releases.
-
-## 0.10 — Controls and renderer customization
+Current prepared version: **FINAL 0.10 / revision 10**.
 
 ### Added
 
@@ -21,33 +19,21 @@ Current prepared version: **0.10 / revision 10**. Versions here describe communi
 - Moveable app CPU/RAM/thermal HUD with orientation and opacity choices.
 - User-started local performance recording and JSON export.
 - Indonesian and Brazilian Portuguese, bringing the menu to five languages.
-
-### Changed
-
 - Sliders snap in tens while retaining endpoints and untouched older values.
 - Graphics profiles include the new graphics selections.
 - Disabling detail overrides restores the correct underlying low/original values.
 - One effective private DXVK config replaces the previous inline config.
 - Input cancellation remains balanced across focus, menu and page changes.
 
-### Preserved
-
-All nine native libraries, existing compatibility fixes, driver loader, cursor bridge, icon, package identity, permissions and signing identity match the established revision 9 line. No DXVK version replacement or frame interpolation was added.
-
-### Validation
-
-17,473 host assertions and signed-package checks passed. Revision 10 phone testing remains to be confirmed. See [release notes](docs/releases/v0.10.md) and [validation](docs/VALIDATION.md).
-
-## 0.9 — Aiming and editing tools
+## PRIVATE 0.9 — Aiming and editing tools
 
 - Independent camera/aim sensitivity, inversion and optional gyro aiming.
 - Undo/redo, multi-select, snapping, alignment and group resizing.
 - Built-in and custom graphics profiles.
 - Android thermal-status HUD selection.
 - Physical-controller digital remapping, stick dead zones and touch auto-hide.
-- User subsequently reported successful gameplay.
 
-## 0.8 — Portable profiles and launcher languages
+## PRIVATE 0.8 — Portable profiles and launcher languages
 
 - English, Filipino and Spanish menu selection.
 - Modern dark purple launcher with the app logo and compact control tools.
@@ -55,8 +41,9 @@ All nine native libraries, existing compatibility fixes, driver loader, cursor b
 - Custom render scale with a nonzero minimum.
 - Diagnostic-logging controls.
 
-## 0.7 and earlier — Foundation
+## PRIVATE 0.7 and earlier — Initial Release
 
+- Modifications based on 0.1 China Port
 - Keyboard/mouse touch modes, configurable buttons, shapes and cursor support.
 - Individually selectable HUD counters and community branding/links.
 - XHYN V naming, UI refinement and reversible lower-detail settings.
