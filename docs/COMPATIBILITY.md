@@ -8,14 +8,14 @@ The APK manifest sets a minimum Android version. It does not establish a minimum
 
 | Item | Verified from package or source | Device evidence |
 | --- | --- | --- |
-| Android | Minimum API 30 / Android 11; target API 36 / Android 16 | Successful gameplay reported on Android 16 in earlier revisions |
-| CPU architecture | ARM64 native libraries (`arm64-v8a`) | Snapdragon 8 Gen 3 |
-| GPU | Vulkan graphics path with bundled Adreno-oriented Turnip driver | Adreno 750 |
-| RAM | No measured minimum | 12 GB installed on reported working device |
+| Android | Minimum API 33 / Android 13; target API 36 / Android 16 | Successful gameplay reported on Android 16 with 8 Gen 3 |
+| CPU architecture | ARM64 native libraries (`arm64-v8a`) | Atleast Snapdragon 8 Gen 1 or equivalent |
+| GPU | Vulkan graphics path with bundled Adreno-oriented Turnip driver | Atleast Adreno 730 with Vulkan 1.3 support or equivalent |
+| RAM | Atleast 12GB | I don't know if it will launch in 8GB ram |
 | Native memory-page compatibility | Nine native libraries retain 16 KiB ELF and APK ZIP alignment | Package check; not a guarantee for every Android/device combination |
-| Storage | Revision 10 APK: 196,224,106 bytes / approximately 187.1 MiB | Total installed size and data size not measured |
+| Storage | Approximately 200.0 MiB | Total installed size and data size not measured but its approximately more than 100GB or less|
 
-**Closest known working setup:** Snapdragon 8 Gen 3, Adreno 750, Android 16, 12 GB RAM. XHYN_PH reported successful gameplay on earlier builds through revision 9. Revision 10 has passed host and APK checks and still needs a current device report.
+**Closest known working setup:** Snapdragon 8 Gen 3, Adreno 750, Android 16, 12 GB RAM.
 
 ## What else is required?
 
@@ -27,9 +27,9 @@ The APK manifest sets a minimum Android version. It does not establish a minimum
 
 ## Other devices
 
-No tested minimum has been established for older Snapdragon devices or for 6 GB/8 GB configurations. Mali, Xclipse, PowerVR and other GPU families are unverified with this build. A working Vulkan implementation or a successful APK install is not sufficient evidence of game compatibility.
+No tested minimum has been established for older Snapdragon devices or for 6 GB/8 GB configurations. **Mali, Xclipse, PowerVR and other GPU families** are not supported. A working Vulkan implementation or a successful APK install is not sufficient evidence of game compatibility.
 
-The DXVK build in this runtime has Android-specific integration and compatibility fallbacks. Desktop upstream DXVK requirements should not be copied into this project's minimum specification without testing this actual build.
+The DXVK build in this runtime has Android-specific integration and compatibility fallbacks.
 
 ## Reporting compatibility
 
