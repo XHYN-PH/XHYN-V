@@ -103,7 +103,6 @@ Read [Installation and updates](docs/INSTALLATION.md) for update signatures, and
 | Import drivers or configure DXVK/Turnip | [Advanced renderer](docs/ADVANCED_RENDERER.md) |
 | Investigate crashes, black screens or settings | [Troubleshooting](docs/TROUBLESHOOTING.md) |
 | Review current changes | [Changelog](CHANGELOG.md) and [0.10 release notes](docs/releases/v0.10.md) |
-| Maintain or publish the repository | [Maintainer guide](docs/MAINTAINER.md) |
 
 ## Current limits
 
