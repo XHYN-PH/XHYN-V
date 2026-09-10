@@ -33,7 +33,7 @@ The DXVK build in this runtime has Android-specific integration and compatibilit
 
 ## Reporting compatibility
 
-Open a device compatibility issue in the repository, or share a report in the [Telegram community](https://t.me/xhynv). Include:
+Open a device compatibility issue in the repository, or share a report in the issues or [Telegram community](https://t.me/xhynv). Include:
 
 - Device model, SoC, GPU, RAM and Android version.
 - XHYN V version and driver name/version.
