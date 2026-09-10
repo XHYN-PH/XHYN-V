@@ -53,7 +53,7 @@ Use a compatible ARM64 AdrenoTools ZIP containing valid metadata, not a Windows 
 
 ## APK update fails
 
-Compare the package, version and signing certificate with [Installation](INSTALLATION.md). Revision 10 updates revision 9 with the same identity. An independently signed fork or older Test branch may not be compatible with an in-place update. Keep backups before any uninstall or app-data reset.
+Compare the package, version and signing certificate with [Installation](INSTALLATION.md). An independently signed fork or older Test branch may not be compatible with an in-place update. Keep backups before any uninstall or app-data reset.
 
 ## Share a useful report
 
