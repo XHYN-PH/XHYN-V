@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">XHYN V</h1>
-<p align="center"><strong>A Unofficial Native Android Port of GTA V (A modification based on China port.)</strong><br></p>
+<p align="center"><strong>A Unofficial Native Android Launcher of GTA V (A modification based on China port.)</strong><br></p>
 <p align="center">
   <a href="https://youtube.com/@xhyn_ph">YouTube</a> ·
   <a href="https://t.me/xhynv">Telegram community</a> ·
