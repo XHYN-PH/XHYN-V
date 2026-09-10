@@ -49,5 +49,3 @@ Current prepared version: **FINAL 0.10 / revision 10**.
 - XHYN V naming, UI refinement and reversible lower-detail settings.
 - Custom driver support and the earlier startup compatibility work.
 - Initial Test builds progressed from graphics/startup failures to reported gameplay.
-
-The [full historical changelog](docs/HISTORY.txt) preserves the detailed revision-by-revision record. Historical limits and verification statements apply to their own revisions; use the current guides for 0.10 behavior.
