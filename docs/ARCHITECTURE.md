@@ -2,7 +2,7 @@
 
 [Back to XHYN V](../README.md)
 
-**XHYN V is based on the China Android port of GTA V, modified by XHYN_PH.** The modifications add the launcher, control tools, tuning options and compatibility improvements described in these guides. Original game and port developers retain their credit.
+**XHYN V is based on the China Android Launcher of GTA V, modified by XHYN_PH.** The modifications add the launcher, control tools, tuning options and compatibility improvements described in these guides. Original game and port developers retain their credit.
 
 ## The three main parts
 
