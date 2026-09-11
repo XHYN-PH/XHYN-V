@@ -14,6 +14,11 @@
 
 XHYN V is a modified community build based on the **China Android Launcher of GTA V**. It adds an easier launcher, customizable touch controls, graphics options and compatibility improvements. Credit for the original game and Android launcher belongs to their respective developers.
 
+TAKE NOTE OF THESE
+- SEVERE STUTTERS
+- MEMORY LEAKS
+- POOR OPTIMIZATION
+
 ## What can you do?
 
 - **Make your own controls:** add buttons, change shapes and bindings, use mouse swipes, and save or share layouts.
