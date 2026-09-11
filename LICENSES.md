@@ -1,17 +1,21 @@
 # License status and third-party notices
 
-A repository-wide license has **not been selected** for this documentation and its artwork. The repository must not be described as granting a blanket MIT, Apache or other license to all of its contents.
+A repository-wide license has **not been selected** for this documentation and its artwork. Do not describe the repository as granting a blanket MIT, Apache or other license to everything it contains.
 
-Existing notices and third-party license terms remain attached to their respective components. Publishing these documents does not relicense the original game, Android runtime, graphics libraries or artwork.
+Existing notices and third-party terms remain attached to their respective components. These documents do not relicense the original game, Android runtime, renderer libraries, driver or artwork.
 
-## Retained notices
+## Included notices
 
-[THIRD-PARTY-NOTICES.txt](third-party/THIRD-PARTY-NOTICES.txt) is retained from the earlier build review materials. It includes notices for the driver-loading components, the bundled Mesa/Turnip package and Android native toolchain/runtime materials. It is a historical notices bundle, not a certification that every component of the supplied APK has been fully audited.
+| File | Scope |
+| --- | --- |
+| [THIRD-PARTY-NOTICES.txt](third-party/THIRD-PARTY-NOTICES.txt) | Existing historical bundle retained unchanged: driver-loading components, Mesa/Turnip and native toolchain/runtime materials |
+| [XHYN-V-NOTICES.txt](third-party/XHYN-V-NOTICES.txt) | Revision 12 Android Game SDK / Swappy attribution, Apache 2.0 text and adaptation notice |
+| [XHYN-DXVK-NOTICES.txt](third-party/XHYN-DXVK-NOTICES.txt) | Revision 13 renderer origins, DXVK/Native and associated dependency notices |
 
-This documentation repository contains guides, release information, credits, retained notices and the project logo. Application source code, binaries, game data, tests and build tools are outside its scope.
+The source-built renderer alternatives are modified Android ARM64 ports. These notice files retain available attribution and terms; they are not a certification that the full supplied game runtime/APK has undergone a complete provenance or licensing audit.
 
-## Maintenance
+This repository's documentation tree contains guides, release information, credits, notices and the project logo. Application source, binaries, tests, signing material and build tools are outside that tree.
 
-Before assigning a license to original contributions, XHYN_PH should select its intended scope and retain all applicable existing notices. Changes to third-party materials should record the source, version/commit and corresponding terms. Do not apply a new license to code or assets that the project does not own.
 
-See [Credits](CREDITS.md) for attribution and the project's anti-piracy notice.
+
+See [Credits](CREDITS.md) for contributor attribution and the project's anti-piracy notice.

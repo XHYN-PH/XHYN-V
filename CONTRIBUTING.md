@@ -1,17 +1,23 @@
 # Contributing
 
-This repository accepts documentation improvements, translation feedback, reproducible bug reports and device compatibility reports.
+This documentation repository welcomes corrections, translation feedback, reproducible bug reports and device compatibility results. Source/build inputs are maintained outside this repository; sending a report does not require game files or private project materials.
 
-## Reports
+## Bug and device reports
 
-Open an issue describing the problem. Include the XHYN V version, exact device/GPU/Android/RAM, driver, relevant settings and reproduction steps. For performance reports, state how the measurement was collected; app CPU/RAM statistics should not be labeled as game FPS.
+Open an [issue](https://github.com/XHYN-PH/XHYN-V/issues) with:
 
-Use minimal relevant diagnostics. Do not upload game data, account credentials, private signing files or personal saves. Community discussion is available in the [Telegram group](https://t.me/xhynv).
+- XHYN V version and whether the same configuration worked in an earlier revision.
+- Phone model, SoC/GPU, Android version and RAM.
+- Selected DXVK, loaded version if known, and Vulkan driver name/version.
+- Actual render dimensions, graphics profile, cap/VSync, custom config/environment and enabled experiments.
+- Reproduction steps, expected result, actual result and relevant scene/session duration.
+- Optional reviewed diagnostics from **Export support ZIP**.
 
-## Documentation changes
+For control issues, include mode, page, binding/action, touch sequence, and the controller/sensor model if relevant. **Test inputs** can help isolate layout behavior before launching the game.
 
-Keep changes focused and explain what information was corrected or added. Check that local links still work and distinguish reported device results from untested expectations.
 
-For translation feedback, name the selected language, quote the menu text and suggest a correction. Application source files and translation build inputs are not part of this repository.
+## Share only relevant material
 
-Preserve credits and third-party notices. Read [license status](LICENSES.md) before contributing material whose reuse terms are unclear. APKs and application updates follow the maintainer's separate release process.
+Review selected log/config previews before posting. Do not upload game data, account credentials, signing material or private saves. The support exporter saves locally and sends nothing automatically.
+
+Retain original/third-party attribution and [notices](LICENSES.md). Community discussion is also available in [Telegram](https://t.me/xhynv).

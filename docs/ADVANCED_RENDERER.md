@@ -1,72 +1,131 @@
-# Drivers, environment variables and dxvk.conf
+# DXVK versions and custom drivers
 
-[Back to the project](../README.md)
+[Back to XHYN V](../README.md)
 
-## Driver selection
+**DXVK and Turnip do different jobs:** DXVK translates graphics calls; Turnip is the GPU driver. Change one at a time when comparing performance.
 
-**Drivers** offers the included **Bundled Turnip R8**, labeled Mesa 26.0.0, and imported compatible drivers. Imported ZIPs must follow the supported AdrenoTools format with `meta.json` and a compatible ARM64 Vulkan library.
+## Choose DXVK
 
-The importer validates archive paths, metadata and native library compatibility. An import passing validation does not establish that the driver will correctly render this game on every device. Driver and cache paths are managed by the launcher.
+Open **Drivers → Choose DXVK version**.
 
-Import through the Android file picker, select the driver, fully close the game and relaunch. To undo a driver experiment, select **Bundled Turnip R8** and restart. An unavailable selected import falls back to the bundled choice; a driver that loads but renders incorrectly can still require manual rollback.
-
-## Enable advanced settings
-
-Open **Graphics** or **Settings → Advanced renderer**. Both custom environment variables and custom `dxvk.conf` have independent master switches, initially Off. Saving/importing text does not automatically enable it.
-
-| Editor | Limits |
+| Choice | Use it for |
 | --- | --- |
-| Environment | Up to 64 literal name/value rows, each with its own switch |
-| Environment value | At most 4,096 characters, one line |
-| Config import | UTF-8, at most 64 KiB |
-| Config text editor | At most 65,536 characters |
-| Config syntax | Global `name = value` lines; comments, blank lines and quoted values |
+| **3.1+** | The default and your first rollback option |
+| **2.7.1+** | Trying the included compatibility build |
+| **2.7.1 GPLAsync** ``[UNSTABLE]`` | Testing asynchronous shaders; some objects may appear late |
+| **1.10.3 Native** ``[UNSTABLE]`` | Testing the older Android build; fewer supported options |
 
-Values are data and are not executed as shell commands. Do not paste `export`, shell scripts or a Windows batch file into the environment editor. Name/value fields should contain only the variable name and its literal value.
+**Fully restart after switching.** Save in-game, then use MENU → Launcher home if needed. These are four integrated Android versions; arbitrary Windows DXVK DLLs cannot be imported.
 
-Executable-specific `[sections]` in a desktop config are rejected. For this single runtime, supply only the global settings you intend to apply. Unknown options may be ignored by the actual native build.
+If an alternative crashes or renders incorrectly, return to **3.1+** and your working driver.
 
-## How precedence works
+## Add a driver
 
-1. The launcher produces its graphics/HUD/FPS/worker settings.
-2. Enabled global custom config is merged with those settings.
-3. **Launcher settings win** is the default for conflicting keys. **Custom config wins** reverses that choice. Nonconflicting custom keys remain in both modes; repeated custom keys use the last value.
-4. Some environment variables are interpreted separately by DXVK/Mesa and can override corresponding config behavior. The selected merge preference does not turn those environment variables into ordinary config keys.
-5. **Disable diagnostic logging** takes priority over custom logging variables. Reserved driver, cache, log and config-file paths remain launcher-managed.
+Open **Drivers → Import & use driver ZIP** and choose a compatible ARM64 AdrenoTools package. The bundled choice is **Turnip R8**.
 
-The result is written to a private config file and applied before native initialization using `DXVK_CONFIG_FILE`. The older inline `DXVK_CONFIG` is cleared. Use **Preview effective settings** to review the next launch's configuration.
+Driver imports affect XHYN V only and do not require root. Passing import checks does not guarantee the driver works with your phone.
 
-Changes require a full restart; there is no hot reload of an active renderer.
+## Advanced settings are optional
 
-## Examples
+**Advanced renderer** has separate switches for custom environment variables and global **dxvk.conf**. Keep them off unless you want to tune specific options.
 
-To express a frame cap through config:
+Use **Preview effective settings** or **Explain active overrides** to see what will be supplied at launch. Custom settings can conflict with launcher choices, so check priority.
+
+The cache manager can clear a selected driver's managed caches. Expect temporary compilation stutter afterward.
+
+[Fix rendering problems](TROUBLESHOOTING.md) · [Graphics guide](GRAPHICS.md)
+
+<details>
+<summary><strong>Technical details and full reference (optional)</strong></summary>
+
+**DXVK and the Vulkan driver are separate selections.** DXVK translates the engine's graphics API; the driver implements Vulkan for the GPU. Keep the driver that already works when first comparing DXVK versions.
+
+## Switch between the included DXVK pairs
+
+Open **Drivers → Choose DXVK version**, or the same selector under **Graphics → Advanced renderer**. Choose a version, close the selector and start the game in a fresh process.
+
+| Choice | Origin | What to expect |
+| --- | --- | --- |
+| **DXVK 3.1+** | The original bundled Android pair, unchanged from r12 | Default on upgrade and the first rollback option |
+| **DXVK 2.7.1+** | Alternative | Compatibility experiment |
+| **DXVK 2.7.1 GPLAsync** ``[UNSTABLE]`` | Upstream 2.7.1 with the pinned Ph42oN GPLAsync patch, built for Android ARM64 | Optional asynchronous shaders; can trade compilation stalls for temporarily missing/late objects |
+| **DXVK 1.10.3 Native** ``[UNSTABLE]`` | Upstream 1.10.3 with DXVK Native platform work and Android/ARM64 adaptations | Experimental legacy option with fewer features; not an official upstream Android release |
+
+The two source-built alternatives are modified Android builds, so desktop version numbers alone do not describe their compatibility.
+
+Every choice loads matching DXGI and D3D11 libraries before the engine. A library-load failure selects 3.1+ for the **next restart**, rather than mixing two versions in a partly initialized process.
+
+This recovery cannot catch every later black screen, native crash, shader failure or Vulkan device loss. If rendering fails, fully close the app, select the original renderer, and restart. **MENU → Launcher home → Close game and return** provides a fresh launcher process after closing gameplay. Save first; this is not a suspend/resume feature.
+
+The selector is limited to the four included pairs. Arbitrary Windows `dxgi.dll`/`d3d11.dll`, loose native libraries and desktop DXVK ZIPs are not importable renderer packages. There is no hot swap or in-app build/download of additional DXVK versions.
+
+## GPLAsync and version-specific settings
+
+**Asynchronous shaders** appears for the GPLAsync choice and defaults On for that build. It controls `dxvk.enableAsync`; normal custom-config precedence still applies. An enabled custom `DXVK_ASYNC=0` environment row disables async even if the UI switch is on. Remove that row to let the normal selection govern it.
+
+If objects appear late or rendering becomes unreliable, disable async or return to 3.1+ and restart. Async compilation is not frame generation, and its presence is not a guarantee of higher sustained FPS.
+
+The legacy 1.10.3 path filters the launcher's tiler/texture-LOD overrides and HUD counters for descriptors, allocations and API level. Saved choices are retained for a later supported renderer. Other unsupported custom settings may be ignored by the selected binary. Windows-only shared handles, GDI and non-null Windows event handles for fence completion are unsupported in this legacy port.
+
+Enable the **DXVK version** HUD counter to check the actual renderer's version string. Support/performance reports also distinguish selected and loaded pairs where a session snapshot exists. A saved selection by itself does not prove successful rendering.
+
+## Vulkan driver selection
+
+The app includes **Bundled Turnip R8**, labeled Mesa 26.0.0. **Import & use driver ZIP** accepts compatible AdrenoTools packages with `meta.json` and ARM64 Vulkan libraries, including supported archives wrapped in one folder.
+
+The importer checks paths, duplicates, size limits, metadata/API requirements, ELF architecture and memory-page alignment before installation in app-private storage. It does not modify Android's system driver and does not require root. A valid package can still fail on a particular GPU or in this game.
+
+Keep the working bundled choice available. A missing/invalid import or a loader-open failure can fall back to the existing driver path; a driver that loads but renders incorrectly may require manual rollback. Fully restart after changing drivers. An Adreno Turnip archive does not add support for a different GPU family.
+
+## Shader cache manager
+
+Before launching, open **Drivers → Shader cache manager** to see managed cache sizes and available storage. Select the driver's caches you want to clear. This removes managed cache data, not drivers or saves.
+
+Revision 13 separates caches by renderer and driver while preserving the established 3.1+ cache location. Clearing one driver's managed cache group clears its renderer subdirectories too. Switching versions does not itself delete caches. Legacy 1.10.3 uses its state-cache path; the 2.7.1 alternatives use the selected driver's cache, while 3.1+ retains its existing shader-cache handling.
+
+Expect compilation and possible stutter after clearing. Old shared caches under `Games/GTAV` are outside these managed totals. Repeated cache deletion is not a routine FPS optimization.
+
+## Environment variables and dxvk.conf
+
+In **Advanced renderer**, custom environment rows and global custom config each have a master switch, initially Off. Each environment row also has its own switch. Saving or importing text does not automatically enable it.
+
+| Input | Accepted form and limit |
+| --- | --- |
+| Environment | Up to 64 literal name/value rows; values are single-line and at most 4,096 characters |
+| Config import | UTF-8, up to 64 KiB |
+| Config text | Global `name = value` settings, comments, blank lines and quoted values; bounded editor/import size |
+| Desktop executable sections | `[sections]` are rejected; use global settings for this runtime |
+
+Rows are literal values, not shell commands. Enter a variable name and value separately; do not paste `export`, a shell script or a Windows batch file. Driver/cache/log/config paths needed by the launcher are reserved.
+
+For example, a global custom config may contain:
 
 ```ini
-# Optional custom config example
+# Optional frame cap; the regular FPS UI can also set it.
 dxgi.maxFrameRate = 30
 ```
 
-If the launcher also specifies that key, select the desired precedence or set the cap through the normal FPS UI. A cap of 30 is not a claim that every scene will run at 30 FPS.
+An optional Mesa cache-size row is `MESA_SHADER_CACHE_MAX_SIZE` with value `512M`. It limits cache size; it does not multiply FPS. Support depends on the selected driver. [Mesa environment variables](https://docs.mesa3d.org/envvars.html).
 
-An environment row supported by the bundled Turnip binary:
+## Conflict priority and explanations
 
-| Name | Value | Purpose |
-| --- | --- | --- |
-| `MESA_SHADER_CACHE_MAX_SIZE` | `512M` | Set a shader-cache size limit |
+1. The launcher generates config from graphics, HUD, cap, workers and supported experiment selections.
+2. Enabled custom global config is merged with it. **Launcher settings win** is the default; **Custom config wins** reverses priority for conflicting keys. Nonconflicting custom keys remain, and repeated custom keys use the last value.
+3. Some enabled environment variables are interpreted separately by DXVK/Mesa and can override related config behavior. The config merge choice does not change those variables into ordinary config entries.
+4. **Disable diagnostic logging** takes priority over custom logging settings. Managed paths and version compatibility filtering still apply.
 
-A cache-size limit is not an FPS multiplier. Avoid copying large collections of debug flags without checking their meaning and support in the selected build. The supported variable names and their semantics come from the [Mesa environment-variable documentation](https://docs.mesa3d.org/envvars.html#turnip-driver-environment-variables); XHYN V's merge and validation behavior is described above.
+The normal launch path writes a private effective config and sets `DXVK_CONFIG_FILE` before native initialization. **Preview effective settings** shows the next launch's values. **Explain active overrides** shows their source and replaced conflicting values, with Next launch and Applied at launch views when a saved startup snapshot exists.
 
-Upstream references: [DXVK configuration](https://github.com/doitsujin/dxvk/blob/master/dxvk.conf) and [DXVK debugging/HUD](https://github.com/doitsujin/dxvk#debugging). Upstream documentation can describe options added after this runtime's build, so verify actual behavior.
+Applied at launch is a record of what was supplied, not proof that every option was recognized or accepted by the renderer. If applying custom settings fails, a visible warning indicates defaults may be in use. There is no hot reload of a running renderer.
 
-## Reset and diagnostics
+Upstream [DXVK configuration](https://github.com/doitsujin/dxvk/blob/master/dxvk.conf) and [HUD documentation](https://github.com/doitsujin/dxvk#debugging) help explain options, but may describe features newer than the selected native build.
 
-**Reset renderer overrides** clears custom rows/text, disables their master switches and queue tuning, and restores two compiler workers. It keeps selected FPS, VSync, detail, controls and driver choices. Reset is not a full graphics/saves reset.
+## Reset scope
 
-**Disable diagnostic logging** quiets managed launcher, DXVK and driver diagnostics. It cannot guarantee suppression of every Android system message or native crash report. The explicit local performance recorder remains available when diagnostic logging is disabled.
+**Reset renderer overrides** clears custom rows/config, disables their master switches, resets conflict priority and returns to two compiler workers. It disables queue, tiler and texture-bias experiments. FPS, VSync, graphics, driver and DXVK selections are kept. Swappy and Android performance hints have separate switches; this is not a reset of all experiments or all app settings.
 
-## DXVK switching and frame interpolation
+**Disable diagnostic logging** quiets managed launcher, DXVK and driver diagnostics and requests quieter engine output. Existing logs remain; Android/native crash reports may still be written. Explicit performance recording and support export remain user-controlled tools.
 
-The app uses native Android DXVK libraries with runtime-specific interfaces. It does not load arbitrary Windows DXVK DLLs, and a DXVK version selector is not implemented. Supporting another binary requires a compatible ARM64 Android build plus integration and device testing.
+For Swappy, hints and HUD definitions, see [Graphics](GRAPHICS.md). For symptoms and rollback, see [Troubleshooting](TROUBLESHOOTING.md).
 
-LSFG-VK/frame interpolation is not installed. The FPS cap and queue experiment control frame delivery; neither generates extra frames.
+</details>

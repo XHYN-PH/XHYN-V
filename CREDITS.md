@@ -1,28 +1,22 @@
 # Credits
 
-## XHYN_PH 🇵🇭
+**XHYN V is based on the China Android launcher of GTA V and has been modified by XHYN_PH 🇵🇭.**
 
-Based on source leaked codes and based on GTA V Unofficial Native Port made in china. XHYN V brings the launcher, controls, configuration tools and community experience together under this name.
+The modifications focus on the launcher, interface, touch controls, graphics settings, driver/renderer options and compatibility improvements. The original game engine and original Android port remain the work of their respective developers.
 
-- [YouTube — @xhyn_ph](https://youtube.com/@xhyn_ph)
-- [Telegram — XHYN V community](https://t.me/xhynv)
-
-## Original creators and components
-
-| Work | Credit |
+| Contribution | Credit |
 | --- | --- |
-| Grand Theft Auto V | Rockstar Games and the game's respective creators and rights holders |
-| Supplied Android game runtime | Its original developers; this repository does not claim authorship of the native game engine |
-| DXVK | DXVK contributors |
+| GTA V | Rockstar Games and the original game's creators |
+| Original China Android Launcher | The original Android launcher developers (China) |
+| DXVK and DXVK Native | DXVK/native-port contributors, including Philip Rebohle and Joshua Ashton |
+| GPLAsync | Ph42oN and patch contributors |
 | SDL | SDL contributors |
-| Mesa / Freedreno / Turnip | Mesa and Freedreno contributors |
-| Bundled Turnip package | KIMCHI / K11MCH1 |
-| libadrenotools and liblinkernsbypass | Billy Laws / bylaws and contributors |
+| Mesa / Turnip | Mesa and Freedreno contributors; bundled package by KIMCHI / K11MCH1 |
+| Driver loading | Billy Laws / bylaws, libadrenotools and liblinkernsbypass contributors |
+| Swappy frame pacing | Android Open Source Project / Game SDK contributors |
 
-Retained third-party notices are included in [third-party/THIRD-PARTY-NOTICES.txt](third-party/THIRD-PARTY-NOTICES.txt). See [license status](LICENSES.md) for their scope.
+ Available third-party attributions and licenses are retained in [Notices](LICENSES.md).
 
-## Anti-piracy notice
+[YouTube — @xhyn_ph](https://youtube.com/@xhyn_ph) · [Telegram community](https://t.me/xhynv)
 
-**XHYN_PH does not condone or support piracy. Use only game files you legally own, and respect the rights and licenses of the original creators.**
-
-This independent community project is not affiliated with or endorsed by Rockstar Games or Take-Two Interactive. GTA V game data, account credentials and proprietary engine source are not distributed in this repository.
+**XHYN_PH does not condone or support piracy.** Use only game files you legally own and respect the rights and licenses of the original creators. XHYN V is unofficial and is not affiliated with or endorsed by Rockstar Games or Take-Two Interactive.
