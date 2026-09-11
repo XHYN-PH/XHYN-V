@@ -10,7 +10,7 @@
 
 ## What is it?
 
-(This is a Native Launcher not a literal andoird port. Its better to wait for mojs0's literal andoird port + The chinese port itself is built upon AI and so this build too. Consider using it when it got released.)
+(This is a Native Launcher not a literal andoird port. Its better to wait for mojs0's literal andoird port + The chinese port itself is built upon AI and so this build too. Consider using it when it got released. The actual china port uses DXVK and Turnip)
 
 XHYN V is a modified community build based on the **China Android Launcher of GTA V**. It adds an easier launcher, customizable touch controls, graphics options and compatibility improvements. Credit for the original game and Android launcher belongs to their respective developers.
 
