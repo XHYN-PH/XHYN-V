@@ -47,6 +47,8 @@ For problems, open the [troubleshooting guide](docs/TROUBLESHOOTING.md).
 
 ## Is it native? Is it faster than a Windows emulator?
 
+# NO.
+
 The engine runs as Android ARM64 code. DXVK translates its graphics to Vulkan, and Turnip handles the GPU. This avoids the CPU translation used by a typical Windows-game setup, but higher FPS is not guaranteed. It supports this particular runtime, not arbitrary Windows games or mods.
 
 [Read the simple explanation and limitations](docs/ARCHITECTURE.md).
