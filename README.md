@@ -31,7 +31,7 @@ TAKE NOTE OF THESE
 
 ## Will it work on my phone?
 
-**Reported lowest configuration working so far:** Snapdragon 6 Gen 1 / Adreno 710, 8GB RAM.
+**Reported lowest configuration working so far:** Snapdragon 685 / Adreno 610, 8GB RAM.
 
 The APK requires Android 11 or newer and ARM64, but gameplay also needs a compatible Vulkan GPU/driver and matching game data. Other devices are not yet confirmed. The APK is about 200 MiB; game data and installed files need additional storage.
 
