@@ -2,7 +2,7 @@
 
 [Back to XHYN V](../README.md)
 
-**Reported working:** Snapdragon 6 Gen 1 / Adreno 710, 8 GB RAM.
+**Reported working:** Snapdragon 685 / Adreno 610, 8 GB RAM.
 
 | You need | What to know |
 | --- | --- |
