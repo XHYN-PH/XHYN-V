@@ -29,8 +29,8 @@ Share your phone model, Android/RAM, app version, DXVK, driver and whether gamep
 | Item | Prepared revision 13 package | Current device evidence |
 | --- | --- | --- |
 | Android | Minimum API 30 / Android 11; target API 36 / Android 16 | Android 15 in the stated working setup |
-| CPU architecture | ARM64 (`arm64-v8a`) native libraries | Snapdragon 6 Gen 1 |
-| GPU | Compatible Vulkan rendering/driver path; bundled Turnip is Adreno-oriented | Adreno 710 |
+| CPU architecture | ARM64 (`arm64-v8a`) native libraries | Snapdragon 685 |
+| GPU | Compatible Vulkan rendering/driver path; bundled Turnip is Adreno-oriented | Adreno 610 |
 | RAM | No tested minimum established | 8 GB in the stated working setup |
 | Native memory pages | Original libraries and alternate DXVK libraries checked for 16 KiB ELF alignment; APK native library placement checked | Package validation, not coverage of all Android/OEM combinations |
 | Download size | Approximately 200.0 MiB | Excludes installed/extracted files, game data and caches |
