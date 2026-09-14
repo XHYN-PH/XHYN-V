@@ -19,6 +19,8 @@ TAKE NOTE OF THESE
 - MEMORY LEAKS
 - POOR OPTIMIZATION
 
+SPECIAL THANKS TO MR.BROTHASON FOR DXVK 2.7.1!
+
 ## What can you do?
 
 - **Make your own controls:** add buttons, change shapes and bindings, use mouse swipes, and save or share layouts.
